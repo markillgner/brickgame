@@ -199,15 +199,17 @@
     function drawScore() {
         ctx.font = "16px Arial";
         ctx.fillStyle = "#838383"; // dark grey
-        ctx.fillText("Score: "+score, 8, 20);
+        ctx.fillText("Score: " 8, 20);
+        ctx.fillStyle = "#ff4d4d"; // red
+        ctx.fillText(score, 48, 20);
     }
 
     function drawLives() {
         ctx.font = "16px Arial";
         ctx.fillStyle = "#838383"; // dark grey
-        ctx.fillText("Lives: "+lives, canvas.width-65, 20);
-        ctx.fillStyle = "#ff4d4d"; // red
-        ctx.fillText(lives, canvas.width-15, 20);
+        ctx.fillText("Lives: " canvas.width-65, 20);
+        ctx.fillStyle = "#0095DD"; // blue
+        ctx.fillText(lives, canvas.width-20, 20);
     }
 
     
