@@ -56,7 +56,7 @@
     function drawBall() {
         ctx.beginPath();
         ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-        ctx.fillStyle = "#838383";
+        ctx.fillStyle = "#838383"; // dark grey
         ctx.fill();
         ctx.closePath();
     }
@@ -64,7 +64,7 @@
     function drawPaddle() {
         ctx.beginPath();
         ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "#0095DD"; // blue
         ctx.fill();
         ctx.closePath();
     }
@@ -79,7 +79,7 @@
                     bricks[c][r].y = brickY;
                     ctx.beginPath();
                     ctx.rect(brickX, brickY, brickWidth, brickHeight);
-                    ctx.fillStyle = "#ff4d4d";
+                    ctx.fillStyle = "#ff4d4d"; //red
                     ctx.fill();
                     ctx.closePath();
                 }
@@ -198,7 +198,7 @@
 
     function drawScore() {
         ctx.font = "16px Arial";
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "#838383"; // dark grey
         ctx.fillText("Score: "+score, 8, 20);
     }
 
