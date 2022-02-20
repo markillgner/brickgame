@@ -14,28 +14,17 @@
 
 <script>
   // JavaScript code goes here
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
-    //draw red square
-    ctx.beginPath();
-    ctx.rect(20, 40, 50, 50);
-    ctx.fillStyle = "#FF1100";
-    ctx.fill();
-    ctx.closePath();
+    function draw() {
+        // drawing code
+        ctx.beginPath();
+        ctx.arc(50, 50, 10, 0, Math.PI*2);
+        ctx.fillStyle = "#0095DD";
+        ctx.fill();
+        ctx.closePath();
+    }
+    setInterval(draw, 10);
+
     
-    //draw green circle
-    ctx.beginPath();
-    ctx.arc(240, 160, 10, 0, Math.PI*2, false);
-    ctx.fillStyle = "yellow";
-    ctx.fill();
-    ctx.closePath();
-    
-    //rectangle with only the outside line in color
-    ctx.beginPath();
-    ctx.rect(160, 10, 100, 70);
-    ctx.strokeStyle = "rgba(0, 255, 255, 0.5)";
-    ctx.stroke();
-    ctx.closePath();
 </script>
 
 </body>
