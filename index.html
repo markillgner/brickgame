@@ -102,10 +102,13 @@
         collisionDetection();
 
         
-        if(x + dx < ballRadius) { // bounce off left wall || x + dx > canvas.width-ballRadius 
+        if(x + dx < ballRadius) { // bounce off left wall  
             dx = -dx;
         }
-        if(y + dy < ballRadius) {
+        
+        // || x + dx > canvas.width-ballRadius (code to bounce off right wall with or operator
+        
+        if(y + dy < ballRadius || y + dy > canvas.height) { // bounce off top wall or bottom wall 
             dy = -dy;
         } else if(y + dy > canvas.height-ballRadius) {
             if(x > paddleX && x < paddleX + paddleWidth) {
