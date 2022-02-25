@@ -23,7 +23,7 @@
     var startX = Array(-3, 3); // list to start x direction of ball: left or right
     var randomXDirection = startX[Math.floor(Math.random() * startX.length)]; // randomly selet the left or right direction for the ball start
     var dx = randomXDirection;
-    var dy = -3;    // determines speed of ball
+    var dy = -3;    // determines speed of ball, y direction
     
     var ballRadius = 10;
 
@@ -102,7 +102,7 @@
         collisionDetection();
 
         
-        if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+        if(x + dx > canvas.width-ballRadius ) { // || x + dx < ballRadius
             dx = -dx;
         }
         if(y + dy < ballRadius) {
@@ -125,7 +125,7 @@
                     var randomXRestart = restartX[Math.floor(Math.random() * restartX.length)]; // randomly selet the left or right direction for the ball restart
                     dx = randomXRestart;
                     // dx = -3;
-                    dy = -3;    // dtermines speed of ball
+                    dy = -3;    // determines speed of ball, y direction
                     paddleX = (canvas.width-paddleWidth)/2;
                 }
 
