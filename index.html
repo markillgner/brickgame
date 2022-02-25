@@ -20,7 +20,7 @@
     
     var x = canvas.width/2;
     var y = canvas.height-30;
-    var startX = Array(-2, 2); // list to start x direction of ball: left or right
+    var startX = Array(-4, 4); // list to start x direction of ball: left or right
     var randomXDirection = startX[Math.floor(Math.random() * startX.length)]; // randomly selet the left or right direction for the ball start
     var dx = randomXDirection;
     var dy = -2;
@@ -121,7 +121,7 @@
                 else {
                     x = canvas.width/2;
                     y = canvas.height-30;
-                    var restartX = Array(-3, -2, -1, 1, 2, 3); // list to restart x direction of ball: left or right
+                    var restartX = Array(-1, 1 ); // list to restart x direction of ball: left or right
                     var randomXRestart = restartX[Math.floor(Math.random() * restartX.length)]; // randomly selet the left or right direction for the ball restart
                     dx = randomXRestart;
                     // dx = -3;
