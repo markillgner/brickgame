@@ -121,7 +121,10 @@
                 else {
                     x = canvas.width/2;
                     y = canvas.height-30;
-                    dx = -3;
+                    var restartX = Array(-3, -2, -1, 1, 2, 3); // list to restart x direction of ball: left or right
+                    var randomXRestart = restartX[Math.floor(Math.random() * restartX.length)]; // randomly selet the left or right direction for the ball restart
+                    dx = randomXRestart;
+                    // dx = -3;
                     dy = -3;
                     paddleX = (canvas.width-paddleWidth)/2;
                 }
