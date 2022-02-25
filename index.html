@@ -30,6 +30,8 @@
     var paddleHeight = 10;
     var paddleWidth = 75;
     var paddleX = (canvas.width-paddleWidth) / 2;
+    
+    var paddleY = (canvas.height-paddleWidth) / 2; // for second paddle
 
     var rightPressed = false;
     var leftPressed = false;
@@ -69,6 +71,14 @@
         ctx.fillStyle = "#0095DD"; // blue
         ctx.fill();
         ctx.closePath();
+        
+        ctx.beginPath();
+        ctx.rect(paddleY, canvas.width-paddleHeight, paddleWidth, paddleHeight);
+        ctx.fillStyle = "#838383"; // dark grey
+        ctx.fill();
+        ctx.closePath();
+        
+        
     }
 
     function drawBricks() {
@@ -111,11 +121,11 @@
         if(y + dy < ballRadius || y + dy > canvas.height) { // bounce off top wall or bottom wall 
             dy = -dy;
         } 
-         else if(y + dy > canvas.height-ballRadius) {
-            // if(x > paddleX && x < paddleX + paddleWidth) {
+        else if(y + dy > canvas.height-ballRadius) {
+            if(x > paddleX && x < paddleX + paddleWidth) {
                 dy = -dy;
-           // }
-            if {  // else
+            }
+            else {  
                 lives--;
                 if(!lives) {
                     alert("GAME OVER");
