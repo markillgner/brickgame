@@ -110,7 +110,8 @@
         
         if(y + dy < ballRadius || y + dy > canvas.height) { // bounce off top wall or bottom wall 
             dy = -dy;
-        } else if(y + dy > canvas.height-ballRadius) {
+        } 
+        /* else if(y + dy > canvas.height-ballRadius) {
             if(x > paddleX && x < paddleX + paddleWidth) {
                 dy = -dy;
             }
@@ -132,7 +133,7 @@
                     paddleX = (canvas.width-paddleWidth)/2;
                 }
 
-            }
+            }*/
         }
 
 
