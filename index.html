@@ -31,7 +31,8 @@
     var paddleWidth = 75;
     var paddleX = (canvas.width-paddleWidth) / 2;
     
-    var paddleY = (canvas.height-paddleWidth) / 2; // for second paddle
+    var paddleX2 = (canvas.width-paddleWidth); // for second paddle
+    var paddleY2 = (canvas.height-paddleWidth) / 2; 
 
     var rightPressed = false;
     var leftPressed = false;
@@ -66,14 +67,14 @@
     }
     
     function drawPaddle() {
-        ctx.beginPath();
+       /* ctx.beginPath();
         ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
         ctx.fillStyle = "#0095DD"; // blue
         ctx.fill();
-        ctx.closePath();
+        ctx.closePath();*/
         
         ctx.beginPath();
-        ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
+        ctx.rect(paddleX2, paddleY2, 10, 75);
         ctx.fillStyle = "#838383"; // dark grey
         ctx.fill();
         ctx.closePath();
