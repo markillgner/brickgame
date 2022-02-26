@@ -81,7 +81,7 @@
         //paddle 2
         ctx.beginPath();
         ctx.rect(paddleX2, paddleY2, paddleWidth2, paddleHeight2);
-        ctx.fillStyle = "#838383" //ff4d4d red "#838383"; // dark grey
+        ctx.fillStyle = "#ff4d4d" //ff4d4d red "#838383"; // dark grey
         ctx.fill();
         ctx.closePath();
         
@@ -135,12 +135,6 @@
             if(y > paddleY2 && y < paddleY2 + paddleHeight2) {
                 dx = -dx;
             } 
-        }
-        
-        else if(y + dy > canvas.height-ballRadius) {
-            if(x > paddleX && x < paddleX + paddleWidth) {
-                dy = -dy;
-            }
             else {  
                 lives--;
                 if(!lives) {
@@ -160,6 +154,31 @@
                 }
 
             }
+        }
+        
+       /* else if(y + dy > canvas.height-ballRadius) {
+            if(x > paddleX && x < paddleX + paddleWidth) {
+                dy = -dy;
+            }*/
+            /*else {  
+                lives--;
+                if(!lives) {
+                    alert("GAME OVER");
+                    document.location.reload();
+                    
+                }
+                else {
+                    x = canvas.width/2;
+                    y = canvas.height-30;
+                    var restartX = Array(-3, -2, -1, 1, 2, 3 ); // list to restart x direction of ball: left or right
+                    var randomXRestart = restartX[Math.floor(Math.random() * restartX.length)]; // randomly selet the left or right direction for the ball restart
+                    dx = randomXRestart;
+                    // dx = -3;
+                    dy = -3;    // determines speed of ball, y direction
+                    paddleX = (canvas.width-paddleWidth)/2;
+                }
+
+            }*/
         }
 
 
