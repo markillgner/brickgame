@@ -79,7 +79,7 @@
         //paddle 2
         ctx.beginPath();
         ctx.rect(paddleX2, paddleY2, paddleWidth2, paddleHeight2);
-        ctx.fillStyle = "#838383" //ff4d4d red "#838383"; // dark grey
+        ctx.fillStyle = "#ff4d4d" //ff4d4d red "#838383"; // dark grey
         ctx.fill();
         ctx.closePath();
         
@@ -130,7 +130,7 @@
         }
         
         else if (x + dx > canvas.width-ballRadius){
-            if(y > paddleY2 && x < paddleY2 + paddleHeight2) {
+            if(y > paddleY2 && y < paddleY2 + paddleHeight2) {
                 dy = -dy;
             } 
         }
