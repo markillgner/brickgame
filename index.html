@@ -39,6 +39,8 @@
 
     var rightPressed = false;
     var leftPressed = false;
+    var upPressed = false;
+    var downPressed = false;
 
     var brickRowCount = 3;
     var brickColumnCount = 5;
@@ -79,7 +81,7 @@
         //paddle 2
         ctx.beginPath();
         ctx.rect(paddleX2, paddleY2, paddleWidth2, paddleHeight2);
-        ctx.fillStyle = "#838383" //ff4d4d red "#838383"; // dark grey
+        ctx.fillStyle = "#ff4d4d" //ff4d4d red "#838383"; // dark grey
         ctx.fill();
         ctx.closePath();
         
@@ -168,6 +170,13 @@
         else if(leftPressed && paddleX > 0) {
             paddleX -= 7;
         }
+        else if(upPressed) {
+            paddleY2 -= 7;
+        }
+        else if(downPressed) {
+            paddleY2 += 7;
+        }
+
 
         x += dx;
         y += dy;
@@ -196,6 +205,12 @@
         else if(e.key == "Left" || e.key == "ArrowLeft") {
             leftPressed = true;
         }
+        else if(e.key == "Up" || e.key == "ArrowUp") {
+            upPressed = true;
+        }
+        else if(e.key == "Down" || e.key == "ArrowDown") {
+            downPressed = true;
+        }
     }
 
     function keyUpHandler(e) {
@@ -205,7 +220,16 @@
         else if(e.key == "Left" || e.key == "ArrowLeft") {
             leftPressed = false;
         }
+        else if(e.key == "Up" || e.key == "ArrowUp") {
+            upPressed = false;
+        }
+        else if(e.key == "Down" || e.key == "ArrowDown") {
+            downPressed = false;
+        }
     }
+    
+
+
 
     function collisionDetection() {
         for(var c=0; c<brickColumnCount; c++) {
