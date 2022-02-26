@@ -31,9 +31,10 @@
     var paddleWidth = 75;
     var paddleX = (canvas.width-paddleWidth) / 2;
     
+    // for second paddle
     var paddleHeight2 = 75;
     var paddleWidth2 = 10;
-    var paddleX2 = (canvas.width-paddleWidth2); // for second paddle
+    var paddleX2 = (canvas.width-paddleWidth2); 
     var paddleY2 = (canvas.height-paddleHeight2) / 2; 
 
     var rightPressed = false;
@@ -75,6 +76,7 @@
         ctx.fill();
         ctx.closePath();*/
         
+        //paddle 2
         ctx.beginPath();
         ctx.rect(paddleX2, paddleY2, paddleWidth2, paddleHeight2);
         ctx.fillStyle = "#838383"; // dark grey
@@ -121,7 +123,7 @@
         
         // || x + dx > canvas.width-ballRadius (code to bounce off right wall with or operator
         
-        if(y + dy < ballRadius || y + dy > canvas.height) { // bounce off top wall or bottom wall 
+        if(y + dy < ballRadius || y + dy > canvas.height-ballRadius) { // bounce off top wall or bottom wall 
             dy = -dy;
         } 
         else if(y + dy > canvas.height-ballRadius) {
