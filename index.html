@@ -81,7 +81,7 @@
         //paddle 2
         ctx.beginPath();
         ctx.rect(paddleX2, paddleY2, paddleWidth2, paddleHeight2);
-        ctx.fillStyle = "#ff4d4d" //ff4d4d red "#838383"; // dark grey
+        ctx.fillStyle = "#838383" //ff4d4d red "#838383"; // dark grey
         ctx.fill();
         ctx.closePath();
         
@@ -170,10 +170,10 @@
         else if(leftPressed && paddleX > 0) {
             paddleX -= 7;
         }
-        else if(upPressed) {
+        else if(upPressed && paddleY2 > 0) {
             paddleY2 -= 7;
         }
-        else if(downPressed) {
+        else if(downPressed && paddleY2 < canvas.height-paddleHeight2) {
             paddleY2 += 7;
         }
 
