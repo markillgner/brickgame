@@ -125,11 +125,21 @@
     }
     
     function drawVBricks(){
-        ctx.beginPath();
-        ctx.rect(20, 30, 20, 50);
-        ctx.fillStyle = "#838383"; //838383 gray ff4d4d //red
-        ctx.fill();
-        ctx.closePath();
+        for(var c=0; c<vBrickColumnCount; c++) {
+            for(var r=0; r<vBrickRowCount; r++) {
+                if(vBricks[c][r].status == 1) {
+                    var brickX = (c*(vBrickWidth+vBrickPadding))+vBrickOffsetLeft;
+                    var brickY = (r*(vBrickHeight+vBrickPadding))+vBrickOffsetTop;
+                    vBricks[c][r].x = brickX;
+                    vBricks[c][r].y = brickY;
+                    ctx.beginPath();
+                    ctx.rect(brickX, brickY, vBrickWidth, vBrickHeight);
+                    ctx.fillStyle = "#ff4d4d"; //red
+                    ctx.fill();
+                    ctx.closePath();
+                }
+            }
+        }
     }
 
     
