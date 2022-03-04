@@ -108,6 +108,14 @@
             }
         }
     }
+    
+    function drawBricks2(){
+        ctx.beginPath();
+        ctx.rect(20, 20, 20, 50);
+        ctx.fillStyle = "#838383"; //gray
+        ctx.fill();
+        ctx.closePath();
+    }
 
     
     
@@ -117,6 +125,7 @@
         // drawing code
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawBricks();
+        drawBricks2();
         drawBall();
         drawPaddle();
         drawScore();
