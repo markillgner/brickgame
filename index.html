@@ -59,6 +59,21 @@
     }
     
     
+    var vBrickRowCount = 5;
+    var vBrickColumnCount = 3;
+    var vBrickWidth = 20;
+    var vBrickHeight = 50;
+    var vBrickPadding = 10;
+    var vBrickOffsetTop = 20;
+    var vBrickOffsetLeft = 30;
+    
+    var vBricks = [];
+    for(var c=0; c<vBrickColumnCount; c++) {
+        vBricks[c] = [];
+        for(var r=0; r<vBrickRowCount; r++) {
+            vBricks[c][r] = { x: 0, y: 0, status: 1 };
+        }
+    }
         
     
     var score = 0;
@@ -109,10 +124,10 @@
         }
     }
     
-    function drawBricks2(){
+    function drawVBricks(){
         ctx.beginPath();
         ctx.rect(20, 30, 20, 50);
-        ctx.fillStyle = "#ff4d4d"; //838383 gray ff4d4d //red
+        ctx.fillStyle = "#838383"; //838383 gray ff4d4d //red
         ctx.fill();
         ctx.closePath();
     }
@@ -125,7 +140,7 @@
         // drawing code
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawBricks();
-        drawBricks2();
+        drawVBricks();
         drawBall();
         drawPaddle();
         drawScore();
