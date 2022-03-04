@@ -321,7 +321,7 @@
                 var b = vBricks[c][r];
                 if(b.status == 1) {
                     if(x > b.x && x < b.x+vBrickWidth && y > b.y && y < b.y+vBrickHeight) {
-                        dy = -dy;
+                        dx = -dx;
                         b.status = 0;
                         score++;
                         if(score == vBrickRowCount*vBrickColumnCount) {
