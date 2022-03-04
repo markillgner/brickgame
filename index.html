@@ -58,7 +58,7 @@
         }
     }
     
-    
+    // vertical bricks
     var vBrickRowCount = 5;
     var vBrickColumnCount = 3;
     var vBrickWidth = 20;
@@ -155,8 +155,8 @@
         drawPaddle();
         drawScore();
         drawLives();
-        collisionDetection();
-
+        //collisionDetection();
+        collisionDetectionVBricks();
         
 
         
@@ -288,7 +288,7 @@
 
 
 
-    function collisionDetection() {
+/*    function collisionDetection() {
         for(var c=0; c<brickColumnCount; c++) {
             for(var r=0; r<brickRowCount; r++) {
                 var b = bricks[c][r];
@@ -306,8 +306,27 @@
                 }
             }
         }
-    }
+    }*/
 
+    function collisionDetectionVBricks() {
+        for(var c=0; c<vBrickColumnCount; c++) {
+            for(var r=0; r<vBrickRowCount; r++) {
+                var b = vBricks[c][r];
+                if(b.status == 1) {
+                    if(x > b.x && x < b.x+vBrickWidth && y > b.y && y < b.y+vBrickHeight) {
+                        dy = -dy;
+                        b.status = 0;
+                        score++;
+                        if(score == vBrickRowCount*vBrickColumnCount) {
+                            alert("YOU WIN, CONGRATULATIONS!");
+                            document.location.reload();
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 
     function drawScore() {
