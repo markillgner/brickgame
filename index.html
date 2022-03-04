@@ -20,10 +20,14 @@
     
     var x = canvas.width/2;
     var y = canvas.height-30;
-    var startX = Array(-3, 3); // list to start x direction of ball: left or right
-    var randomXDirection = startX[Math.floor(Math.random() * startX.length)]; // randomly selet the left or right direction for the ball start
-    var dx = randomXDirection;
-    var dy = -3;    // determines speed of ball, y direction
+    // var startX = Array(-3, 3); // list to start x direction of ball: left or right
+    // var randomXDirection = startX[Math.floor(Math.random() * startX.length)]; // randomly selet the left or right direction for the ball start
+    var startY = Array(-3, 3); // list to start y direction of ball: left or right
+    var randomYDirection = startY[Math.floor(Math.random() * startY.length)]; // randomly selet the left or right direction for the ball start
+    var dx = -3;
+    var dy = randomYDirection;
+    // var dx = randomXDirection;
+    // var dy = -3;    // determines speed of ball, y direction
     
     var ballRadius = 8;
 
